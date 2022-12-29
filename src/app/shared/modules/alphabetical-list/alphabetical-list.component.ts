@@ -1,9 +1,12 @@
 import {
     ChangeDetectionStrategy,
     Component,
+    ContentChild,
     Input,
-    OnChanges
+    OnChanges,
+    TemplateRef
 } from '@angular/core';
+import { AlphabeticalListItemContentDirective } from './directives';
 
 @Component({
     selector: 'alphabetical-list',
@@ -16,7 +19,10 @@ export class AlphabeticalListComponent<T> implements OnChanges {
     public data!: T[];
 
     @Input()
-    public labelHandler: (item: T) => string = (item) => (item as string);
+    public itemLabelHandler: (item: T) => string = (item) => (item as string);
+
+    @ContentChild(AlphabeticalListItemContentDirective, { read: TemplateRef })
+    public readonly listItemContentTemplate: TemplateRef<unknown> | undefined;
 
     public letters!: string[];
     public sectionMap!: Map<string, T[]>;
@@ -43,7 +49,7 @@ export class AlphabeticalListComponent<T> implements OnChanges {
     }
 
     private extractFirstLetterFromLabel(item: T): string {
-        const label = this.labelHandler(item);
+        const label = this.itemLabelHandler(item);
         const firstLetter = label[0].toUpperCase();
 
         return firstLetter;

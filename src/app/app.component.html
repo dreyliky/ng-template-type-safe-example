@@ -1,4 +1,9 @@
 <alphabetical-list
     [data]="data"
-    [labelHandler]="labelHandler">
+    [itemLabelHandler]="labelHandler">
+    <ng-template
+        alphabeticalListItemContent
+        let-myData="item">
+        <b>{{ myData.name }} (#{{ myData.id }})</b>
+    </ng-template>
 </alphabetical-list>

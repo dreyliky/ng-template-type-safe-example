@@ -12,16 +12,6 @@ interface Item {
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-    // public readonly data = [
-    //     'Angular',
-    //     'Backend',
-    //     'Business Analyst',
-    //     'C++ Developer',
-    //     'Devops',
-    //     'Frontend',
-    //     'Fullstack Developer'
-    // ];
-
     public readonly data = [
         { id: 1, name: 'Angular' },
         { id: 2, name: 'Backend' },
