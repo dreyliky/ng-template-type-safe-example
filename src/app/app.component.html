@@ -3,7 +3,7 @@
     [itemLabelHandler]="labelHandler">
     <ng-template
         alphabeticalListItemContent
-        let-myData="item">
-        <b>{{ myData.name }} (#{{ myData.id }})</b>
+        let-item>
+        <b>{{ item.name }} (#{{ item.id }})</b>
     </ng-template>
 </alphabetical-list>
