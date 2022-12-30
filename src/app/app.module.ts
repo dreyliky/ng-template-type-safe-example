@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
-import { AlphabeticalListModule } from './shared';
+import { AlphabeticalListModule, TemplateContextTypeSafeModule } from './shared';
 
 @NgModule({
     declarations: [
@@ -13,7 +13,8 @@ import { AlphabeticalListModule } from './shared';
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        AlphabeticalListModule
+        AlphabeticalListModule,
+        TemplateContextTypeSafeModule
     ],
     bootstrap: [
         AppComponent

@@ -12,6 +12,8 @@ interface Item {
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
+    public readonly contextType!: { $implicit: Item };
+
     public readonly data = [
         { id: 1, name: 'Angular' },
         { id: 2, name: 'Backend' },
