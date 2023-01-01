@@ -15,7 +15,7 @@ interface Item {
 export class AppComponent {
     public readonly contextType!: AlphabeticalListItemContext<Item>;
 
-    public readonly data = [
+    public readonly data: Item[] = [
         { id: 1, name: 'Angular' },
         { id: 2, name: 'Backend' },
         { id: 3, name: 'Business Analyst' },
