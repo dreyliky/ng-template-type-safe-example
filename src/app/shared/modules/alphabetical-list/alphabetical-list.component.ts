@@ -7,6 +7,7 @@ import {
     TemplateRef
 } from '@angular/core';
 import { AlphabeticalListItemContentDirective } from './directives';
+import { AlphabeticalListItemContext } from './interfaces';
 
 @Component({
     selector: 'alphabetical-list',
@@ -22,7 +23,7 @@ export class AlphabeticalListComponent<T> implements OnChanges {
     public itemLabelHandler: (item: T) => string = (item) => (item as string);
 
     @ContentChild(AlphabeticalListItemContentDirective, { read: TemplateRef })
-    public readonly listItemContentTemplate: TemplateRef<unknown> | undefined;
+    public readonly listItemContentTemplate: TemplateRef<AlphabeticalListItemContext<T>> | undefined;
 
     public letters!: string[];
     public sectionMap!: Map<string, T[]>;

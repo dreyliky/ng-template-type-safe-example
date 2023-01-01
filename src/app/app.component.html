@@ -3,7 +3,7 @@
     [itemLabelHandler]="labelHandler">
     <ng-template
         alphabeticalListItemContent
-        [ngTemplateContextTypeSafe]="contextType"
+        [ngxTemplateContextType]="contextType"
         let-item>
         <b>{{ item.name }} (#{{ item.id }})</b>
     </ng-template>

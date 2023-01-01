@@ -1,2 +1,2 @@
-export * from './template-context-type-safe';
+export * from './template-type-safe';
 

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { AlphabeticalListItemContext } from '@shared';
 
 interface Item {
     readonly id: number;
@@ -12,7 +13,7 @@ interface Item {
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-    public readonly contextType!: { $implicit: Item };
+    public readonly contextType!: AlphabeticalListItemContext<Item>;
 
     public readonly data = [
         { id: 1, name: 'Angular' },
